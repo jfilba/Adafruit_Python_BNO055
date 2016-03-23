@@ -255,7 +255,7 @@ class BNO055(object):
             # Flush any pending received data to get into a clean state.
             self._serial.flushInput()
             # Send the data.
-            self._serial.write(command)
+            self._serial.write(str(command))
             logger.debug('Serial send: 0x{0}'.format(binascii.hexlify(command)))
             # Stop if no acknowledgment is expected.
             if not ack:
